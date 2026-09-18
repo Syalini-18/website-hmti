@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: #FFFFFF;
+    color: #1E293B;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brand-text h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    color: #FFFFFF;
+}
+
+.brand-text p {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #E2E8F0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background: #172554;
+    color: #FFFFFF;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #D92323;
+}
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 60px;
+
+    background: #EFF6FF;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.subtitle {
+    color: #D92323;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #172554;
+}
+
+.hero h1 span {
+    color: #D92323;
+}
+
+.hero-text > p:not(.subtitle) {
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #64748B;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn,
+.btn-outline {
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btn {
+    background: #D92323;
+    color: #FFFFFF;
+}
+
+.btn:hover {
+    background: #B91C1C;
+}
+
+.btn-outline {
+    border: 1px solid #2563EB;
+    color: #2563EB;
+    background: #FFFFFF;
+}
+
+.btn-outline:hover {
+    background: #2563EB;
+    color: #FFFFFF;
+}
+
+/* ================= HIGHLIGHTS ================= */
+
+.highlights {
+    padding: 80px 60px;
+    background: #FFFFFF;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    color: #172554;
+    margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+    color: #64748B;
+    line-height: 1.7;
+}
+
+
+.activity-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.activity-card {
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+
+    padding: 30px;
+
+    background: #FFFFFF;
+
+    transition: 0.2s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+.activity-tag {
+    display: inline-block;
+
+    padding: 5px 10px;
+    margin-bottom: 15px;
+
+    border-radius: 20px;
+
+    background: #EFF6FF;
+    color: #2563EB;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.activity-card h3 {
+    color: #172554;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+
+.activity-card p {
+    color: #64748B;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+.activity-card a {
+    color: #D92323;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.activity-card a:hover {
+    color: #B91C1C;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+
+    background: #172554;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .activity-container {
+    grid-template-columns: 1fr;
+    }
+
+    .highlights {
+        padding: 60px 20px;
+    }
+
+    .btn,
+    .btn-outline {
+        text-align: center;
+    }
+}
