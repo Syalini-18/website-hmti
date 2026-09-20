@@ -21,10 +21,14 @@
 
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="kegiatan.html">Kegiatan</a></li>
             <li><a href="informasi.html">Informasi</a></li>
+            <li><a href="kegiatan.html">Kegiatan</a></li>
             <li><a href="kontak.html">Kontak</a></li>
         </ul>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Ganti tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
     </nav>
 
     <main>
@@ -40,75 +44,115 @@
         </section>
 
         <section class="activities">
-            <div class="activity-list">
-                <article class="activity-item">
-                    <span class="activity-tag">
-                        Seminar
-                    </span>
+            <div class="activity-filter scroll-animation">
+                <button class="filter-btn active" data-filter="all">
+                    Semua
+                </button>
 
-                    <h2>SEMNASTI</h2>
+                <button class="filter-btn" data-filter="Seminar">
+                    Seminar
+                </button>
 
-                    <div class="activity-info">
-                        <p>📅 5 - 6 Desember 2025</p>
-                        <p>📍 Universitas Dian Nuswantoro</p>
-                    </div>
+                <button class="filter-btn" data-filter="Competition">
+                    Competition
+                </button>
 
-                    <p class="activity-description">
-                        Seminar nasional yang membahas perkembangan
-                        sains dan teknologi, khususnya dalam bidang
-                        teknologi informasi dan kecerdasan buatan.
-                    </p>
-
-                    <a href="https://semnasti.hmtiudinus.org/" class="activity-link">
-                        Lihat Detail →
-                    </a>
-                </article>
-
-                <article class="activity-item">
-                    <span class="activity-tag">
-                        Competition
-                    </span>
-
-                    <h2>IT Competition</h2>
-
-                    <div class="activity-info">
-                        <p>📅 10 Desember 2024 - 23 Januari 2025</p>
-                        <p>📍 Universitas Dian Nuswantoro</p>
-                    </div>
-
-                    <p class="activity-description">
-                        Kompetisi yang memberikan kesempatan kepada
-                        peserta untuk mengembangkan kemampuan di bidang
-                        teknologi informasi.
-                    </p>
-
-                    <a href="https://itc.hmtiudinus.org/" class="activity-link">
-                        Lihat Detail →
-                    </a>
-                </article>
-
-                <article class="activity-item">
-                    <span class="activity-tag">
-                        Technology
-                    </span>
-
-                    <h2>HI - TECHNOLOGY</h2>
-
-                    <div class="activity-info">
-                        <p>📅 12 Mei 2026 & 13 Mei 2026</p>
-                        <p>📍 Mall Citraland & Universitas Dian Nuswantoro</p>
-                    </div>
-
-                    <p class="activity-description">
-                        Kegiatan yang berkaitan dengan perkembangan
-                        teknologi dan inovasi bagi generasi muda.
-                    </p>
-
-                    <a href="https://hitech.hmtiudinus.org/" class="activity-link">
-                        Lihat Detail →
-                    </a>
-                </article>
+                <button class="filter-btn" data-filter="Technology">
+                    Technology
+                </button>
             </div>
+
+            <div class="activity-list" id="activityList"></div>
+
+            <section class="registration-section scroll-animation" id="registrationSection">
+                <div class="info-heading">
+                    <p class="subtitle">PENDAFTARAN</p>
+                    <h2>Daftar Kegiatan HMTI</h2>
+                    <p>
+                        Isi formulir berikut untuk mendaftarkan diri pada kegiatan HMTI.
+                    </p>
+                </div>
+
+                <form id="registrationForm" class="registration-form">
+
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input 
+                            type="text"
+                            id="name"
+                        >
+
+                        <small class="input-hint">Masukkan nama lengkap</small>
+                        <small class="error-message" id="nameError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nim">NIM</label>
+                        <input 
+                            type="text"
+                            id="nim"
+                        >
+
+                        <small class="input-hint">Contoh: A11.2026.12345</small>
+                        <small class="error-message" id="nimError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email"
+                            id="email"
+                        >
+
+                        <small class="input-hint">Contoh: nama@email.com</small>
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp">Nomor WhatsApp</label>
+                        <input 
+                            type="text"
+                            id="whatsapp"
+                        >
+
+                        <small class="input-hint">Contoh: 081234567890</small>
+                        <small class="error-message" id="whatsappError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activity">Kegiatan</label>
+
+                        <select id="activity">
+                            <option value="">Pilih kegiatan</option>
+                            <option value="SEMNASTI">SEMNASTI</option>
+                            <option value="IT Competition">IT Competition</option>
+                            <option value="HI-TECHNOLOGY">HI-TECHNOLOGY</option>
+                        </select>
+
+                        <small class="error-message" id="activityError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">Alasan Mengikuti</label>
+
+                        <textarea
+                            id="reason"
+                            rows="5"
+                            placeholder="Tuliskan alasan mengikuti kegiatan"
+                        ></textarea>
+
+                        <small class="error-message" id="reasonError"></small>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Kirim Pendaftaran
+                    </button>
+
+                    <p id="registrationMessage"></p>
+
+                </form>
+
+            </section>
         </section>
     </main>
 
@@ -134,13 +178,17 @@
                 <h3>Hubungi Kami</h3>
 
                 <a href="mailto:udinus.hmti@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
                     udinus.hmti@gmail.com
                 </a>
 
                 <a href="https://wa.me/6285876215725" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
                     +62 858-7621-5725
                 </a>
+
                 <p>
+                    <i class="fa-solid fa-location-dot"></i>
                     Jl. Sadewa 2 No. 8, Pendrikan Kidul,
                     Semarang Tengah, Kota Semarang 50131
                 </p>
@@ -149,9 +197,30 @@
             <div class="footer-social">
                 <h3>Sosial Media</h3>
 
-                <a href="#" target="_blank">Instagram</a>
-                <a href="#" target="_blank">TikTok</a>
-                <a href="#" target="_blank">YouTube</a>
+                <a href="https://www.instagram.com/hmtiudinus" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </a>
+
+                <a href="https://www.tiktok.com/@hmtiudinus" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                    TikTok
+                </a>
+
+                <a href="https://www.youtube.com/@hmtiudinus4102" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                    YouTube
+                </a>
+
+                <a href="https://x.com/hmtiudinus" target="_blank">
+                    <i class="fa-brands fa-x"></i>
+                    X
+                </a>
+
+                <a href="https://www.facebook.com/hmti.udinus" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                    Facebook
+                </a>
             </div>
         </div>
 
@@ -161,5 +230,7 @@
             </p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

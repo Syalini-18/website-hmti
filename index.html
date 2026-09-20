@@ -21,10 +21,14 @@
 
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="kegiatan.html">Kegiatan</a></li>
             <li><a href="informasi.html">Informasi</a></li>
+            <li><a href="kegiatan.html">Kegiatan</a></li>
             <li><a href="kontak.html">Kontak</a></li>
         </ul>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Ganti tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
     </nav>
 
     <main>
@@ -46,14 +50,14 @@
                         Lihat Kegiatan
                     </a>
 
-                    <a href="artikel.html" class="btn-outline">
-                        Baca Artikel
+                    <a href="informasi.html" class="btn-outline">
+                        Lihat Informasi
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="about-section">
+        <section class="about-section scroll-animation">
             <div class="about-container">
                 <div class="about-text">
                     <p class="subtitle">TENTANG KAMI</p>
@@ -92,7 +96,7 @@
             </div>
         </section>
 
-        <section class="highlights">
+        <section class="highlights scroll-animation">
             <div class="section-heading">
                 <p class="subtitle">KEGIATAN HMTI</p>
                 <h2>Program Unggulan</h2>
@@ -103,7 +107,7 @@
             </div>
 
             <div class="activity-container">
-                <article class="activity-card">
+                <article class="activity-card scroll-animation">
                     <div class="activity-content">
                         <span class="activity-tag">Seminar</span>
                         <h3>SEMNASTI</h3>
@@ -176,13 +180,17 @@
                 <h3>Hubungi Kami</h3>
 
                 <a href="mailto:udinus.hmti@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
                     udinus.hmti@gmail.com
                 </a>
 
                 <a href="https://wa.me/6285876215725" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
                     +62 858-7621-5725
                 </a>
+
                 <p>
+                    <i class="fa-solid fa-location-dot"></i>
                     Jl. Sadewa 2 No. 8, Pendrikan Kidul,
                     Semarang Tengah, Kota Semarang 50131
                 </p>
@@ -191,9 +199,30 @@
             <div class="footer-social">
                 <h3>Sosial Media</h3>
 
-                <a href="#" target="_blank">Instagram</a>
-                <a href="#" target="_blank">TikTok</a>
-                <a href="#" target="_blank">YouTube</a>
+                <a href="https://www.instagram.com/hmtiudinus" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </a>
+
+                <a href="https://www.tiktok.com/@hmtiudinus" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                    TikTok
+                </a>
+
+                <a href="https://www.youtube.com/@hmtiudinus4102" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                    YouTube
+                </a>
+
+                <a href="https://x.com/hmtiudinus" target="_blank">
+                    <i class="fa-brands fa-x"></i>
+                    X
+                </a>
+
+                <a href="https://www.facebook.com/hmti.udinus" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                    Facebook
+                </a>
             </div>
         </div>
 
@@ -203,5 +232,7 @@
             </p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
