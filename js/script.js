@@ -51,7 +51,7 @@ function displayActivities(activityData)
 
     activityList.innerHTML = "";
 
-    activityData.forEach(function(activity){
+    activityData.forEach(function(activity, index){
         const activityItem = document.createElement("article");
 
         activityItem.classList.add(
@@ -60,9 +60,10 @@ function displayActivities(activityData)
         );
 
         activityItem.style.transitionDelay =
-            `${activityData.indexOf(activity) * 0.15}s`;
+            `${index * 0.15}s`;
 
         activityItem.innerHTML = `
+            <span class="activity-tag">${activity.category}</span>
             <h2>${activity.name}</h2>
 
             <div class="activity-info">
@@ -87,6 +88,52 @@ function displayActivities(activityData)
         observeElement(activityItem);
     });
 }
+
+function populateActivityOptions() {
+    const activitySelect = document.getElementById("activity");
+
+    if (!activitySelect) {
+        return;
+    }
+
+    activities.forEach(function(activity) {
+        const option = document.createElement("option");
+
+        option.value = activity.name;
+        option.textContent = activity.name;
+
+        activitySelect.appendChild(option);
+    });
+}
+
+function goToRegistrationForm(activityName) {
+    const activitySelect = document.getElementById("activity");
+    const registrationSection = document.getElementById("registrationSection");
+
+    if (activitySelect && activityName) {
+        activitySelect.value = activityName;
+    }
+
+    if (registrationSection) {
+        registrationSection.scrollIntoView({ behavior: "smooth" });
+    }
+}
+
+const activityListContainer = document.getElementById("activityList");
+
+if (activityListContainer) {
+    activityListContainer.addEventListener("click", function(event) {
+        const registerBtn = event.target.closest(".register-btn");
+
+        if (!registerBtn) {
+            return;
+        }
+
+        goToRegistrationForm(registerBtn.dataset.activity);
+    });
+}
+
+populateActivityOptions();
 
 const filterButtons = document.querySelectorAll(".filter-btn");
 

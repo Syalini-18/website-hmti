@@ -74,6 +74,11 @@ nav a:hover {
     color: #D92323;
 }
 
+nav a.active {
+    color: #D92323;
+    font-weight: 700;
+}
+
 .theme-toggle {
     width: 42px;
     height: 42px;
@@ -661,16 +666,6 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-.activity-link {
-    color: #D92323;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.activity-link:hover {
-    color: #B91C1C;
-}
-
 .contact-section {
     max-width: 1100px;
     margin: auto;
@@ -1170,6 +1165,10 @@ body.dark-mode nav a {
 }
 
 body.dark-mode nav a:hover {
+    color: #60A5FA;
+}
+
+body.dark-mode nav a.active {
     color: #60A5FA;
 }
 
